@@ -1,0 +1,87 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:monospace;
+}
+
+body {
+    background-color: #0f0f0f;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+img.portrait {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+div.polaroid-frame {
+    flex: 1;
+    padding: 20px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: rgba(240, 240, 240, 0.9);
+    backdrop-filter: blur(10px);
+    width: auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    margin-left: 5%;
+}
+
+div.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+img.featured-pig, img.flying-pig {
+    height: 100px;
+    width: 100px;
+}
+
+img.featured-pig {
+    filter: grayscale(100%);
+    transition: transform 4s ease-in-out;
+}
+
+img.featured-pig:hover {
+    transform: rotate(360deg);
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.fade-in-element {
+    opacity: 0;
+    animation: fade-in 2s ease-in forwards;
+}
+
+@keyframes fly {
+    0% { transform: translateX(-100vw) translateY(0); }
+    25% { transform: translateX(calc(50vw - 100px)) translateY(-25vh); }
+    50% { transform: translateX(calc(100vw - 50px)) translateY(0); }
+    75% { transform: translateX(-25vw) translateY(25vh)}
+    100% { transform: translateX(-100vw) translateY(0); }
+}
+
+img.flying-pig {
+    position: fixed;
+    animation: fly 10s infinite;
+    animation-timing-function: linear;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.banner {
+    text-shadow: 0 5px 6px black;
+}
